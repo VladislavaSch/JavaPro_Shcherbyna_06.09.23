@@ -3,20 +3,20 @@ package shcherbyna.homeworks.homework8;
 public class Main {
     public static void main(String[] args) {
 
+        FigureArea [] figures = new FigureArea[] {
+                new Circle(4.5),
+                new Triangle(5,9),
+                new Square(7.9)
+        };
 
-        Triangle triangle = new Triangle(5, 6);
-        Circle circle = new Circle(9);
-        Square square = new Square(4.2);
+        int counter = 1;
 
+        for (FigureArea figureArea: figures) {
+            System.out.println("Area of figure " + counter + " = " + figureArea.calculateArea());
+            counter++;
+        }
 
-        System.out.println(triangle.calculateArea());
-        System.out.println(circle.calculateArea());
-        System.out.println(square.calculateArea());
-
-        System.out.println(triangle.calculateArea() + circle.calculateArea() + square.calculateArea());
-
+        AreaSum.calculateSum(figures);
 
     }
-
-
 }
