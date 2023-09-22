@@ -11,7 +11,7 @@ public class HomeWorkApp {
         posOrNeg(4);
         System.out.println(posOrNeg2(56));
         print("Hi there!", 3);
-        System.out.println(year(1000));
+        System.out.println(year(1900));
 
     }
     public static void printThreeWords() {
