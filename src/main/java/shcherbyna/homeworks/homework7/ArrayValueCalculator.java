@@ -1,12 +1,10 @@
 package shcherbyna.homeworks.homework7;
 
-import java.util.Arrays;
-
 import static shcherbyna.homeworks.homework7.ArrayValueCalculator.doCalc;
 
 class ArrayValueCalculator {
-    public static int doCalc(String [][] array) throws ArraySizeException, ArrayDataException {
-        if(array.length != 4) {
+    public static int doCalc(String[][] array) throws ArraySizeException, ArrayDataException {
+        if (array.length != 4) {
             throw new ArraySizeException("Array must be 4х4");
         }
         int value = 0;
@@ -15,11 +13,11 @@ class ArrayValueCalculator {
             int counter2 = 0;
             if (string.length != 4) {
                 throw new ArraySizeException("Array MUST be 4х4");
-                } else {
+            } else {
                 for (String number : string) {
                     try {
                         value += Integer.parseInt(number);
-                    } catch (NumberFormatException e){
+                    } catch (NumberFormatException e) {
                         throw new ArrayDataException("Value in index [" + counter + "]" + "[" + counter2 + "] are incorrect");
                     }
                     counter2++;
@@ -31,14 +29,14 @@ class ArrayValueCalculator {
     }
 }
 
- class ArraySizeException extends Exception{
-    ArraySizeException(String a){
+class ArraySizeException extends Exception {
+    ArraySizeException(String a) {
         super(a);
     }
 }
 
-class ArrayDataException extends Exception{
-    ArrayDataException(String a){
+class ArrayDataException extends Exception {
+    ArrayDataException(String a) {
         super(a);
     }
 }
@@ -46,37 +44,43 @@ class ArrayDataException extends Exception{
 class Main {
     public static void main(String[] args) {
 
-        String [][] array = {{"1", "1", "1", "1"},
-                { "1", "1", "1"},
+        String[][] array = {{"1", "1", "1", "1"},
+                {"1", "1", "1"},
                 {"1", "1", "1", "1"},
-                { "1", "1", "1", "1"}};
+                {"1", "1", "1", "1"}};
 
         try {
             System.out.println(doCalc(array));
-        } catch (ArraySizeException| ArrayDataException e){
+        } catch (ArraySizeException | ArrayDataException e) {
             System.out.println("Exception: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Other type of exception");
         }
 
-        String [][] array2 = {{"1", "1", "1", "1"},
-                { "1", "1", "1", "1"},
+        String[][] array2 = {{"1", "1", "1", "1"},
+                {"1", "1", "1", "1"},
                 {"1", "1", "tut", "1"},
-                { "1", "1", "1", "1"}};
+                {"1", "1", "1", "1"}};
 
         try {
             System.out.println(doCalc(array2));
-        } catch (ArraySizeException| ArrayDataException e) {
+        } catch (ArraySizeException | ArrayDataException e) {
             System.out.println("Exception: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Other type of exception");
         }
 
-        String [][] array3 = {{"1", "1", "1", "1"},
-                { "1", "1", "1", "1"},
+        String[][] array3 = {{"1", "1", "1", "1"},
                 {"1", "1", "1", "1"},
-                { "1", "1", "1", "1"}};
+                {"1", "1", "1", "1"},
+                {"1", "1", "1", "1"}};
 
         try {
             System.out.println(doCalc(array3));
-        } catch (ArraySizeException| ArrayDataException e) {
+        } catch (ArraySizeException | ArrayDataException e) {
             System.out.println("Exception: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Other type of exception");
         }
     }
 }
