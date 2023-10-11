@@ -8,17 +8,17 @@ import static shcherbyna.homeworks.homework10.phonebook.PhoneBook.*;
 
 public class PhoneBook {
 
-    private static List <String> people = new ArrayList<>();
+    private static final List<String> people = new ArrayList<>();
 
-    public static void add (Record person) {
+    public static void add(Record person) {
         String name = person.name;
         long tel = person.tel;
         people.add("Name: " + name + ", Telephone: " + tel);
     }
 
     public static String find(String name) {
-        for (String a: people) {
-            if (a.contains(name)){
+        for (String a : people) {
+            if (a.contains(name)) {
                 return a;
             }
         }
@@ -26,13 +26,13 @@ public class PhoneBook {
     }
 
     public static List findAll(String name) {
-        List <String> list = new ArrayList<>();
-        for (String a: people) {
+        List<String> list = new ArrayList<>();
+        for (String a : people) {
             if (a.contains(name)) {
                 list.add(a);
             }
         }
-        if (list.isEmpty()){
+        if (list.isEmpty()) {
             return null;
         }
         return list;
@@ -40,9 +40,9 @@ public class PhoneBook {
 
 }
 
-class Record{
-     String name;
-     long tel;
+class Record {
+    String name;
+    long tel;
 
     public Record(String name, long tel) {
         this.name = name;
@@ -50,7 +50,7 @@ class Record{
     }
 }
 
-class Main{
+class Main {
     public static void main(String[] args) {
 
         Record person1 = new Record("Lisa", 380954556615L);
