@@ -8,17 +8,15 @@ import static shcherbyna.homeworks.homework10.phonebook.PhoneBook.*;
 
 public class PhoneBook {
 
-    private static final List<String> people = new ArrayList<>();
+    private static final List<Record> people = new ArrayList<>();
 
     public static void add(Record person) {
-        String name = person.name;
-        long tel = person.tel;
-        people.add("Name: " + name + ", Telephone: " + tel);
+        people.add(person);
     }
 
-    public static String find(String name) {
-        for (String a : people) {
-            if (a.contains(name)) {
+    public static Record find(String name) {
+        for (Record a : people) {
+            if (Objects.equals(a.getName(), name)) {
                 return a;
             }
         }
@@ -26,9 +24,9 @@ public class PhoneBook {
     }
 
     public static List findAll(String name) {
-        List<String> list = new ArrayList<>();
-        for (String a : people) {
-            if (a.contains(name)) {
+        List<Record> list = new ArrayList<>();
+        for (Record a : people) {
+            if (Objects.equals(a.getName(), name)) {
                 list.add(a);
             }
         }
@@ -41,17 +39,29 @@ public class PhoneBook {
 }
 
 class Record {
-    String name;
-    long tel;
+    private String name;
+    private long tel;
 
     public Record(String name, long tel) {
         this.name = name;
         this.tel = tel;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public long getTel() {
+        return tel;
+    }
+    public String toString () {
+       return  "Name: " + name + ", Tel = " + tel;
+    }
 }
 
 class Main {
     public static void main(String[] args) {
+
 
         Record person1 = new Record("Lisa", 380954556615L);
         Record person2 = new Record("Alex", 380995861122L);
