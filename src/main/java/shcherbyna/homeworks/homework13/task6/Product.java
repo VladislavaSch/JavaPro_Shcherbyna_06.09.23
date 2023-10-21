@@ -42,6 +42,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Type: " + getType() + ", Price: " + getPrice() + " uah, Create date: " + getDate();
+        return "Type: " + getType() + ", Price: " + getPrice() + " uah, discount: " + isDiscount() + ", Create date: " + getDate();
     }
 }

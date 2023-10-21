@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         List<Product> products = new ArrayList<>();
         products.add(new Product("Book", 200, true, LocalDate.of(2023, 10, 1), 12562));
-        products.add(new Product("Notebook", 200, false,LocalDate.of(2021, 9, 5), 25698));
+        products.add(new Product("Book", 200, false,LocalDate.of(2021, 9, 5), 25698));
         products.add(new Product("Pen", 30, false,LocalDate.of(2023, 6, 12), 45879));
         products.add(new Product("Pencil", 20, true, LocalDate.of(2022, 10, 5),56297));
         products.add(new Product("Notebook", 150, true,LocalDate.of(2023,9,30),58965));
