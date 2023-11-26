@@ -56,6 +56,7 @@ public class SocketHM {
     }
 
     private static boolean containsRussianLetters(String text) {
-        return (text.contains("ы")) || (text.contains("ъ")) || (text.contains("э")) || (text.contains("ё"));
+        String txt = text.toLowerCase();
+        return (txt.contains("ы")) || (txt.contains("ъ")) || (txt.contains("э")) || (txt.contains("ё"));
     }
 }
